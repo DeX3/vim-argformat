@@ -29,8 +29,14 @@ class Formatter(object):
     return self.source[start:self.arglist.start_index]
 
   def arglist_suffix( self ):
-    end = self.source.find( '\n', self.arglist.end_index )
-    return self.source[self.arglist.end_index:end]
+    end = self.source.find( ')', self.arglist.end_index )
+    line_end = self.source.find( '\n', end )
+
+    if line_end == -1:
+      line_end = len(self.source)
+
+    return self.source[self.arglist.end_index:line_end]
+
 
   def line_at( self, i ):
     start = self.source.rfind( '\n', 0, i ) + 1

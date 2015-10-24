@@ -45,23 +45,39 @@ funtion anotherHelper(
 ) {
     return helper( baz, bar, foo );
 }
+
+someLongerMethodName(
+  including,
+  { some: [ complex, parameters ] },
+  "and, \\\"even\\\"",
+  strings
+)
+
+asdf
 '''.strip()
 
 class TestFormatter( unittest.TestCase ):
 
-  # def test_multiline1( self ):
-  #   index = 100
+  def test_multiline1( self ):
+    index = 100
 
-  #   arglist = argformat.get_arglist_at( source, index )
-  #   fmt = multiline.MultilineFormatter( source, arglist )
-  #   print( fmt.apply() )
+    arglist = argformat.get_arglist_at( source, index )
+    fmt = multiline.MultilineFormatter( source, arglist )
+    print( fmt.apply() )
 
-  # def test_concise1( self ):
-  #   index = 100
+  def test_multiline2( self ):
+    index = 400
 
-  #   arglist = argformat.get_arglist_at( source, index )
-  #   fmt = concise.ConciseFormatter( source, arglist )
-  #   print( fmt.apply() )
+    arglist = argformat.get_arglist_at( source, index )
+    fmt = multiline.MultilineFormatter( source, arglist )
+    print( fmt.apply() )
+
+  def test_concise1( self ):
+    index = 100
+
+    arglist = argformat.get_arglist_at( source, index )
+    fmt = concise.ConciseFormatter( source, arglist )
+    print( fmt.apply() )
 
   def test_onpar1( self ):
     index = 100
@@ -69,6 +85,6 @@ class TestFormatter( unittest.TestCase ):
     arglist = argformat.get_arglist_at( source, index )
     fmt = onpar.OnParFormatter( source, arglist )
     print( fmt.apply() )
-    
+
 if __name__ == '__main__':
   unittest.main()
