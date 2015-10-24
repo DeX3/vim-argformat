@@ -6,8 +6,10 @@ endif
 
 let g:argformat_spaces_around_arglist = 0
 
+let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
 function! ArgFormat( style )
-    pyfile py/index.py
+    execute 'pyfile ' . s:path . '/py/index.py'
 endfunction
 
 command! ArgFormatConcise call ArgFormat( 'concise' )
