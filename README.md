@@ -5,6 +5,8 @@ This plugin enables the user to reformat argument lists in function
 calls and function definitions. It was developed for Javascript, but it should
 work for many C-Style languages (C, C++, Java, C#, etc...).
 
+![argformat screen capture](http://i.imgur.com/2WpLG09.gif)
+
 The plugin designed so that it supports any ','-separated list between '()'.
 This enables it to work on function definitions as well. The plugin provides 3
 commands, one for formatting an argument list into one of the 3 styles
@@ -12,7 +14,6 @@ respectively.
 
 `argformat` will automatically detect your indentation settings for formatting
 argument lists.
-
 
 Styles
 ------
