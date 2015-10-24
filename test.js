@@ -4,6 +4,9 @@ var fs = require( 'fs' );
 module.exports = function( a, b, c ) {
 
     console.log( "testaroni", 3, { foo: bar } );
+
+    test( a );
+
     return anotherHelper(
         44,
         12,
@@ -13,7 +16,7 @@ module.exports = function( a, b, c ) {
 
 function helper( test,
                  suff,
-                 bla ) {
+                 suff ) {
 
   return 3;
 }

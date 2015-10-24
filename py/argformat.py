@@ -104,9 +104,5 @@ def get_args( argstr ):
 
   return args, total_args_length
 
-def hello():
-  return "argformat"
-
-
 def find_pair_with_opener( ch ):
   return next( (p for p in PAIRS if p.has_opener(ch)), None )

@@ -15,6 +15,8 @@ import unittest
 import argformat
 import formatter
 import multiline
+import concise
+import onpar
 
 source = '''
 var fs = require( 'fs' );
@@ -47,11 +49,25 @@ funtion anotherHelper(
 
 class TestFormatter( unittest.TestCase ):
 
-  def test_line_at( self ):
+  # def test_multiline1( self ):
+  #   index = 100
+
+  #   arglist = argformat.get_arglist_at( source, index )
+  #   fmt = multiline.MultilineFormatter( source, arglist )
+  #   print( fmt.apply() )
+
+  # def test_concise1( self ):
+  #   index = 100
+
+  #   arglist = argformat.get_arglist_at( source, index )
+  #   fmt = concise.ConciseFormatter( source, arglist )
+  #   print( fmt.apply() )
+
+  def test_onpar1( self ):
     index = 100
 
     arglist = argformat.get_arglist_at( source, index )
-    fmt = multiline.MultilineFormatter( source, arglist )
+    fmt = onpar.OnParFormatter( source, arglist )
     print( fmt.apply() )
     
 if __name__ == '__main__':

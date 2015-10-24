@@ -1,0 +1,91 @@
+*argformat.txt*  Format argument lists in various styles
+*argformat*
+*arg-format*
+
+Author:  Roman Decker <https://github.com/DeX3>
+License: Same terms as Vim itself (see |license|)
+
+|argformat-intro|          Introduction
+|argformat-styles|         Styles
+|argformat-installation|   Installation
+|argformat-requirements|   Requirements
+|argformat-commands|       Commands
+|argformat-options|        Options
+|argformat-detection|      Argument list detection
+
+INTRODUCTION                                                   *argformat-intro*
+
+This plugin enables the user to reformat argument lists in function
+calls and function definitions. It was developed for Javascript, but it should
+work for many C-Style languages (C, C++, Java, C#, etc...).
+
+The plugin designed so that it supports any ','-separated list between '()'.
+This enables it to work on function definitions as well. The plugin provides 3
+commands, one for formatting an argument list into one of the 3 styles
+respectively.
+
+argformat will automatically detect your indentation settings for formatting
+argument lists.
+
+
+STYLES                                                        *argformat-styles*
+
+Currently, argformat supports 3 argument list styles:
+
+>
+    // 'concise'
+    methodName( some, parameters, to, the, call, go, here );
+
+    // 'multiline'
+    methodName(
+        some,
+        parameters,
+        to,
+        the,
+        call,
+        go,
+        here
+    );
+
+    // 'on par with call'
+    methodName( some,
+                parameters,
+                to,
+                the,
+                call,
+                go,
+                here );
+<
+INSTALLATION                                            *argformat-installation*
+
+Just use your favorite plugin manager (I recommend vim-plug,
+https://github.com/junegunn/vim-plug).
+
+REQUIREMENTS                                            *argformat-requirements*
+
+argformat requires your vim to be compiled with python support (+python).
+
+COMMANDS                                                    *argformat-commands*
+
+                                                *:ArgFormatConcise*
+:ArgFormatConcise       Format the current argument list in the "concise"
+                        style.
+
+                                                *:ArgFormatMultiline*
+:ArgFormatMultiline     Format the current argument list in the "multiline"
+                        style
+                                                *:ArgFormatOnPar*
+:ArgFormatOnPar         Format the current argument list in the "on par with
+                        call" style
+
+OPTIONS                                                      *argformat-options*
+
+argformat may be customized with the following options.
+
+
+*g:argformat_spaces_around_arglist*  Default: 0. When set to 1, argformat will
+add/keep spaces between the opening and closing parentheses of the argument
+list.
+
+
+ vim:tw=78:et:ft=help:norl:
